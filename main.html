@@ -10,5 +10,88 @@
         <header>
             <h1 id="titre">Salle d'escalade de Beaulieu</h1>
         </header>
+
+        <main class="bloc-list">
+            <div class="bloc" onclick="openLightbox('Images/bloc1.jpg')">
+              <img src="Images/bloc1.jpg" alt="Bloc 1">
+              <div class="bloc-info">Bloc 1 - V2</div>
+            </div>
+            <div class="bloc" onclick="openLightbox('Images/bloc2.jpg')">
+              <img src="Images/bloc2.jpg" alt="Bloc 2">
+              <div class="bloc-info">Bloc 2 - V4</div>
+            </div>
+            <div class="bloc" onclick="openLightbox('Images/bloc3.jpg')">
+                <img src="Images/bloc3.jpg" alt="Bloc 3">
+                <div class="bloc-info">Bloc 3 - V3</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc4.jpg')">
+                <img src="Images/bloc4.jpg" alt="Bloc 4">
+                <div class="bloc-info">Bloc 4 - V5</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc5.jpg')">
+                <img src="Images/bloc5.jpg" alt="Bloc 5">
+                <div class="bloc-info">Bloc 5 - V6</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc6.jpg')">
+                <img src="Images/bloc6.jpg" alt="Bloc 6">
+                <div class="bloc-info">Bloc 6 - V3</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc7.jpg')">
+                <img src="Images/bloc7.jpg" alt="Bloc 7">
+                <div class="bloc-info">Bloc 7 - V4</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc8.jpg')">
+                <img src="Images/bloc8.jpg" alt="Bloc 8">
+                <div class="bloc-info">Bloc 8 - V2</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc9.jpg')">
+                <img src="Images/bloc9.jpg" alt="Bloc 9">
+                <div class="bloc-info">Bloc 9 - V1</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc10.jpg')">
+                <img src="Images/bloc10.jpg" alt="Bloc 10">
+                <div class="bloc-info">Bloc 10 - V7</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc11.jpg')">
+                <img src="Images/bloc11.jpg" alt="Bloc 11">
+                <div class="bloc-info">Bloc 11 - V6</div>
+              </div>
+              <div class="bloc" onclick="openLightbox('Images/bloc12.jpg')">
+                <img src="Images/bloc12.jpg" alt="Bloc 12">
+                <div class="bloc-info">Bloc 12 - V5</div>
+              </div>
+          </main>
+          
+          <div id="lightbox" class="lightbox">
+            <a href="#" class="close">&times;</a>
+            <img id="lightbox-img" src="" alt="Bloc en grand">
+          </div>
+          
+          <script>
+            // Fonction pour afficher l'image en grand dans la lightbox
+            function openLightbox(imageSrc) {
+              const lightbox = document.getElementById('lightbox'); // Récupère l'élément contenant la lightbox
+              const img = document.getElementById('lightbox-img'); // Récupère l'image à l'intérieur de la lightbox
+              img.src = imageSrc; // Change la source de l'image pour afficher celle sélectionnée
+              lightbox.style.display = 'flex'; // Affiche la lightbox (flex permet de centrer l'image facilement)
+            }
+          
+            // Gestion du clic pour fermer la lightbox
+            document.querySelector('.lightbox').addEventListener('click', function (e) {
+                // Si l'utilisateur clique en dehors de l'image ou sur la croix de fermeture
+                if (e.target === this || e.target.classList.contains('close')) {
+                this.style.display = 'none'; // Masque la lightbox
+              }
+            });
+
+            // Fermer la lightbox quand l'utilisateur appuie sur Échap
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    const lightbox = document.getElementById('lightbox');
+                    lightbox.style.display = 'none';
+                }
+            });
+
+          </script>
     </body>
 </html>    
